@@ -1,43 +1,43 @@
-class Student {
-  int id;
-  String name;
-  String course;
-  List<int> marks;
+// class Student {
+//   int id;
+//   String name;
+//   String course;
+//   List<int> marks;
 
-  Student({
-    required this.id,
-    required this.name,
-    required this.course,
-    required this.marks,
-  });
+//   Student({
+//     required this.id,
+//     required this.name,
+//     required this.course,
+//     required this.marks,
+//   });
 
-  // Calculate Average Mark
-  void averageMark() {
-    int total = 0;
+//   // Calculate Average Mark
+//   void averageMark() {
+//     int total = 0;
 
-    for (int i = 0; i < marks.length; i++) {
-      total += marks[i];
-    }
+//     for (int i = 0; i < marks.length; i++) {
+//       total += marks[i];
+//     }
 
-    double average = total / marks.length;
+//     double average = total / marks.length;
 
-    print("Average:$average");
-  }
+//     print("Average:$average");
+//   }
 
   // void printStudentDetails() {
   //   print("Id:$id,Name:$name,Course:$course,Mark:$marks");
   //   averageMark();
   // }
-}
+// }
 
-void main() {
-  List<Student> students = [
-    Student(id: 101, name: "Arun", course: "Flutter", marks: [80, 75, 90]),
-    Student(id: 102, name: "Rahul", course: "Python", marks: [65, 70, 80]),
-    Student(id: 103, name: "Anu", course: "Flutter", marks: [92, 88, 95]),
-    Student(id: 104, name: "Fazil", course: "Python", marks: [55, 62, 58]),
-    Student(id: 105, name: "Neha", course: "Flutter", marks: [72, 80, 76]),
-  ];
+// void main() {
+//   List<Student> students = [
+//     Student(id: 101, name: "Arun", course: "Flutter", marks: [80, 75, 90]),
+//     Student(id: 102, name: "Rahul", course: "Python", marks: [65, 70, 80]),
+//     Student(id: 103, name: "Anu", course: "Flutter", marks: [92, 88, 95]),
+//     Student(id: 104, name: "Fazil", course: "Python", marks: [55, 62, 58]),
+//     Student(id: 105, name: "Neha", course: "Flutter", marks: [72, 80, 76]),
+//   ];
 
   // for (Student student in students) {
   //   student.printStudentDetails();
@@ -145,7 +145,7 @@ void main() {
   //       print("${student.name} → FAIL");
   //     }
   //   }
-}
+// }
 
 
 
