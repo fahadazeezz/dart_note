@@ -1,6 +1,5 @@
 // Task 1
 
-
 // import 'dart:io';
 
 // void main() {
@@ -61,5 +60,46 @@
 //   }
 // }
 
-
 // Task 2
+
+void main() {}
+
+class Product {
+  String name;
+  double price;
+  int stock;
+
+  Product({required this.name, required this.price, required this.stock});
+}
+
+void checkout(String product, int quantity, double wallet, double balance) {}
+
+class invalidQuantityExceptions implements Exception {
+  String message;
+  invalidQuantityExceptions(this.message);
+
+  @override
+  String toString() {
+    return message;
+  }
+}
+
+class outOfStockExceptions implements Exception {
+  String message;
+  outOfStockExceptions(this.message);
+
+  @override
+  String toString() {
+    return message;
+  }
+}
+
+class insufficientWalletExceptions implements Exception {
+  String message;
+  insufficientWalletExceptions(this.message);
+
+  @override
+  String toString() {
+    return message;
+  }
+}
