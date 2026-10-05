@@ -62,7 +62,20 @@
 
 // Task 2
 
-void main() {}
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter your product name:");
+  String name = stdin.readLineSync()!;
+  stdout.write("Enter your quantity:");
+  int quantity = int.parse(stdin.readLineSync()!);
+  stdout.write("Enter your wallet:");
+  double wallet = double.parse(stdin.readLineSync()!);
+
+  Product product = Product(name: name, price: 100000, stock: 2);
+
+  checkOut(product, quantity, wallet);
+}
 
 class Product {
   String name;
@@ -72,7 +85,28 @@ class Product {
   Product({required this.name, required this.price, required this.stock});
 }
 
-void checkout(String product, int quantity, double wallet, double balance) {}
+void checkOut(Product product, int quantity, double wallet) {
+  try {
+    // Check quantity
+    if (quantity <= 0) {
+      throw invalidQuantityExceptions("Invaild Quantity");
+    }
+    // Check Stock
+    if (quantity > product.stock) {
+      throw outOfStockExceptions("Out of Stock");
+    }
+
+    // check TotalPrice
+    double totalPrice = product.price * quantity;
+
+    // Check wallet
+    if (wallet < totalPrice) {
+      throw insufficientWalletExceptions("Insufficient Wallet Balance");
+    }
+  } catch (e) {
+    print("Error:$e");
+  }
+}
 
 class invalidQuantityExceptions implements Exception {
   String message;
