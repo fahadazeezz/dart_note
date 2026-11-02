@@ -28,16 +28,29 @@ enum Employee {
 
   double get annualSalary => (basicSalary * 12) + annualBonus;
 
-  bool canApproveLeave(int requestedDays) {
-    if (requestedDays <= 2) {
+  bool canApproveLeave(Employee role, int requestedDays) {
+    if (role == Employee.intern && requestedDays <= 2) {
       return true;
-    } else if (requestedDays <= 3) {
+    } else if (role == Employee.juniorDeveloper && requestedDays <= 3) {
       return true;
-    } else if (requestedDays <= 5) {
+    } else if (role == Employee.seniorDeveloper && requestedDays <= 5) {
       return true;
-    } else if (requestedDays <= 10) {
+    } else if (role == Employee.teamLead && requestedDays <= 10) {
       return true;
     }
     return false;
   }
+
+  void displayInfo() {
+    print("Employee Role:$name");
+    print("Basic Monthly Salary:$basicSalary");
+    print("Annual Leave:$annualLeave days");
+    print("Annual Bonus:$annualBonus");
+    print("Annual Salary:$annualSalary");
+  }
+}
+
+void main() {
+  Employee employee = Employee.juniorDeveloper;
+  employee.displayInfo();
 }
